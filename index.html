@@ -45,6 +45,25 @@
       One: 'Sure. Bye.'
     </p>
     <button class="replace-two">Заменить кавычки</button>
+    <script>
+      document.addEventListener("DOMContentLoaded",() => {
+        let textOne = document.querySelector('.text-one');
+        const btnReplaceOne = document.querySelector('.replace-one');
 
+        btnReplaceOne.addEventListener('click', (e)=>{
+          e.preventDefault();
+          textOne.innerHTML = textOne.innerHTML.replace(/'/g, "\"");
+        });
+
+
+        let textTwo = document.querySelector('.text-two');
+        const btnReplaceTwo = document.querySelector('.replace-two');
+
+        btnReplaceTwo.addEventListener('click', (e)=>{
+          e.preventDefault();
+          textTwo.innerHTML = textTwo.innerHTML.replace(/\s'|'\s/igm, "\"");
+        });
+      });
+    </script>
 </body>
 </html>
